@@ -1,6 +1,5 @@
 """Local Gradio demonstration for CedarBridge's two configurable agents."""
 from dataclasses import replace
-import json
 import os
 import gradio as gr
 from dotenv import load_dotenv
@@ -44,7 +43,10 @@ def build_demo(model=None, log_dir=None):
                 options=PromptOptions(cot=cot, few_shot=few_shot, instruction_role=placement), log_dir=log_dir)
             answer, trace = agent.respond(message, history, return_trace=True)
             visible = {k:v for k,v in trace.items() if k not in {"requests", "history"}}
-        except (ModelError, OSError, ValueError):
+        except ModelError as exc:
+            answer = str(exc)
+            visible = {"error": answer}
+        except (OSError, ValueError):
             answer = "The assistant could not start. Check the local API key, business files, and settings."
             visible = {"error": answer}
         return "", [*history, {"role":"user","content":message},{"role":"assistant","content":answer}], visible
@@ -71,7 +73,8 @@ def build_demo(model=None, log_dir=None):
                         placement=gr.Radio(["system","user"],value="system",label="Operational instruction placement")
                         gr.Markdown("Start a new conversation for a clean comparison. Top-k is not supported by this API.")
                 with gr.Column(scale=3,min_width=350):
-                    chatbot=gr.Chatbot(label="Conversation",height=350,elem_id="chat-panel")
+                    chatbot=gr.Chatbot(label="Conversation",height=350,elem_id="chat-panel",
+                        placeholder="Tell your advisor where you’re stuck, or choose an example below.")
                     message=gr.Textbox(label="Message",placeholder="Tell us about your project, or ask about a service.",lines=2,max_lines=5)
                     with gr.Row():
                         send=gr.Button("Send",variant="primary")

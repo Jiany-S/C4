@@ -1,0 +1,167 @@
+{
+  "trial_id": "mira_default__ci_failure__1",
+  "setup": "mira_default",
+  "case": "ci_failure",
+  "repetition": 1,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "My API tests pass locally but fail intermittently in CI. Which service would help me diagnose this, and what two pieces of evidence should I bring?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_AEfnCwnPktKeBHmFbLCvEvnD",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"all\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Project Clarity": {
+                "minutes": 30,
+                "price_usd": 15,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Scope an idea and choose manageable next steps."
+              },
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              },
+              "Team Sprint": {
+                "minutes": 90,
+                "price_usd": 60,
+                "billing": "per team",
+                "capacity": 4,
+                "purpose": "Plan a project with a team of up to four students."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_AEfnCwnPktKeBHmFbLCvEvnD",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"all\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 14,
+            "prompt_tokens": 2615,
+            "total_tokens": 2629,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaPLa7JRBI9dxbob73aCl7qbs9HOJ",
+          "finish_reason": "tool_calls",
+          "seconds": 3.117303200000606,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Prototype Clinic is designed to help diagnose debugging and testing issues like intermittent CI test failures.\",\"answer\":\"The Prototype Clinic service would best help you diagnose your intermittent CI test failures. It is a 60-minute online session focused on debugging and testing blockers. For the session, bring two key pieces of evidence: 1) the test code and setup that passes locally, and 2) the CI logs or error messages showing the intermittent failures. This will help the coach understand the testing environment differences and guide you effectively.\"}"
+          },
+          "usage": {
+            "completion_tokens": 108,
+            "prompt_tokens": 2792,
+            "total_tokens": 2900,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaPLdBaFws137bhD3nHt8xiWQala8",
+          "finish_reason": "stop",
+          "seconds": 3.444415599995409,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Prototype Clinic is designed to help diagnose debugging and testing issues like intermittent CI test failures.",
+      "answer": "The Prototype Clinic service would best help you diagnose your intermittent CI test failures. It is a 60-minute online session focused on debugging and testing blockers. For the session, bring two key pieces of evidence: 1) the test code and setup that passes locally, and 2) the CI logs or error messages showing the intermittent failures. This will help the coach understand the testing environment differences and guide you effectively.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 6.587633199997072,
+  "model_calls": 2,
+  "prompt_tokens": 5407,
+  "completion_tokens": 122,
+  "answer_words": 70
+}

@@ -30,7 +30,7 @@ Assessed against all three pages of the supplied C4 assignment on 18 October 202
 | Use-case summary and write-up | 10 | 10 | Clear continuation of C3 with explicit audience, goals, tools, and limits |
 | ReAct logic manually implemented | 30 | 30 | Explicit graph decisions, real actions, matching observations, repeated calls, parsing, repair, and bounded errors |
 | Persona design and configuration | 20 | 18 | Roles and defaults differ and are tested, but styles overlap on routine service/lead questions |
-| Configuration experiments and comparison | 15 | 14 | Controlled live matrix with retained failures; only two repetitions and eight cases |
+| Configuration experiments and comparison | 15 | 14 | Controlled live matrix with retained failures; two repetitions per condition; the supplementary cases cover defaults only |
 | Clear instructions | 10 | 10 | Separate instructions, explicit I/O, worked examples, quantity preservation, and demonstrated ablation effect |
 | Creativity, clarity, and reflection | 15 | 13 | Practical two-role extension and grounded reflection; naturalness judgments lack independent human ratings |
 | **Total** | **100** | **95** | Estimated range 93–97 depending on the instructor's assessment of depth and presentation |
@@ -39,8 +39,10 @@ Assessed against all three pages of the supplied C4 assignment on 18 October 202
 
 The automated suite covers the graph, tool validation and storage, observation IDs, memory isolation, deduplication, API-failure handling, final parsing, prompt controls, evaluation checks, and interface construction. The notebook executes in a fresh kernel without paid calls. Gradio's real HTTP/queue is exercised with a scripted model; real API persona/tool behavior is established separately by the experiment trials and browser rehearsal.
 
-Both default personas passed 16/16 final functional trials. That is a small benchmark result, not a general reliability guarantee. A scorer correction recognizes a valid refusal with a typographic apostrophe; the original output and scores remain intact. The reduced-instruction, zero-shot, and short-token failures remain in the final study.
+The final suite has 36 passing tests. Evidence hashes are checked on Windows and Linux without altering the original Windows-recorded files. Truncated model responses now retain their usage and finish reason in the trace while remaining errors.
 
-The main weaknesses are limited repetitions, no held-out benchmark, no independent human style ratings, finite history, and model-dependent intent interpretation. Error paths are tested with injected failures rather than deliberate provider outages. Quote grouping is an explicit estimate assumption; it does not prove multi-team availability. Local JSONL is not a production database, and cross-turn retries are not idempotent.
+Both default personas passed 16/16 final functional trials. The supplementary new-case review passed 6/6 for each persona; the original over-strict lookup scores remain in the saved trials alongside the correction. That is a small benchmark result, not a general reliability guarantee. A scorer correction recognizes a valid refusal with a typographic apostrophe; the original output and scores remain intact. The reduced-instruction, zero-shot, and short-token failures remain in the final study.
+
+The main weaknesses are limited repetitions, a small supplementary new-case check rather than an independent benchmark, no human style ratings, finite history, and model-dependent intent interpretation. Error paths are tested with injected failures rather than deliberate provider outages. Quote grouping is an explicit estimate assumption; it does not prove multi-team availability. Local JSONL is not a production database, and cross-turn retries are not idempotent.
 
 C4 has no listed bonus or explicit video requirement in the supplied assignment. Hugging Face hosting is not claimed. The submission is the complete runnable project and executed notebook, including the experiments and reflection. The course PDFs, credentials, environment, runtime logs, and local scratch files are excluded from the repository.

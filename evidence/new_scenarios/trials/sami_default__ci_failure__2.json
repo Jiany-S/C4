@@ -1,0 +1,153 @@
+{
+  "trial_id": "sami_default__ci_failure__2",
+  "setup": "sami_default",
+  "case": "ci_failure",
+  "repetition": 2,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "sami",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.1,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "My API tests pass locally but fail intermittently in CI. Which service would help me diagnose this, and what two pieces of evidence should I bring?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_Xy5EtKg6oddyK1H9DXuyMDeR",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"Prototype Clinic\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_Xy5EtKg6oddyK1H9DXuyMDeR",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"Prototype Clinic\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 15,
+            "prompt_tokens": 2624,
+            "total_tokens": 2639,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaPLkBRjoakI7O8HnhqCMqawFKLKv",
+          "finish_reason": "tool_calls",
+          "seconds": 1.581420499998785,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.1,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Prototype Clinic is designed for debugging and testing blockers like intermittent CI test failures.\",\"answer\":\"The Prototype Clinic service is best for diagnosing intermittent CI test failures. It is a 60-minute online session focused on debugging and testing blockers. For the session, bring two pieces of evidence: 1) a reproducible bug report or detailed description of the intermittent failure, including error messages and logs; 2) your test cases and environment setup details to help identify differences between local and CI environments.\"}"
+          },
+          "usage": {
+            "completion_tokens": 103,
+            "prompt_tokens": 2708,
+            "total_tokens": 2811,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaPLmrW5kSzpd0UROLNO2Bp2Gq9hf",
+          "finish_reason": "stop",
+          "seconds": 3.036360899997817,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.1,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Prototype Clinic is designed for debugging and testing blockers like intermittent CI test failures.",
+      "answer": "The Prototype Clinic service is best for diagnosing intermittent CI test failures. It is a 60-minute online session focused on debugging and testing blockers. For the session, bring two pieces of evidence: 1) a reproducible bug report or detailed description of the intermittent failure, including error messages and logs; 2) your test cases and environment setup details to help identify differences between local and CI environments.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 4.622969600000943,
+  "model_calls": 2,
+  "prompt_tokens": 5332,
+  "completion_tokens": 118,
+  "answer_words": 66
+}

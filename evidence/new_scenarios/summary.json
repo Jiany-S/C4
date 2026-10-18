@@ -1,0 +1,52 @@
+[
+  {
+    "setup": "mira_default",
+    "passed": 4,
+    "trials": 6,
+    "pass_rate": 0.6666666666666666,
+    "mean_seconds": 5.618860049999057,
+    "mean_calls": 2.3333333333333335,
+    "mean_answer_words": 55.833333333333336,
+    "prompt_tokens": 37729,
+    "completion_tokens": 716,
+    "failures": [
+      {
+        "trial": "mira_default__new_quote__1",
+        "checks": [
+          "required_tools"
+        ]
+      },
+      {
+        "trial": "mira_default__new_quote__2",
+        "checks": [
+          "required_tools"
+        ]
+      }
+    ]
+  },
+  {
+    "setup": "sami_default",
+    "passed": 4,
+    "trials": 6,
+    "pass_rate": 0.6666666666666666,
+    "mean_seconds": 5.123624683332309,
+    "mean_calls": 2.3333333333333335,
+    "mean_answer_words": 52,
+    "prompt_tokens": 37855,
+    "completion_tokens": 699,
+    "failures": [
+      {
+        "trial": "sami_default__new_quote__1",
+        "checks": [
+          "required_tools"
+        ]
+      },
+      {
+        "trial": "sami_default__new_quote__2",
+        "checks": [
+          "required_tools"
+        ]
+      }
+    ]
+  }
+]

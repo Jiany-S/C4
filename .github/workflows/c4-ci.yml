@@ -28,6 +28,8 @@ jobs:
           python -m pip check
       - name: Test manual graph and tools
         run: python -m pytest tests -q
+      - name: Verify original experiment evidence
+        run: python scripts/verify_evidence.py
       - name: Execute notebook
         run: python scripts/execute_notebook.py
       - name: Verify Gradio HTTP and queue

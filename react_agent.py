@@ -7,7 +7,7 @@ from langgraph.graph import END, START, StateGraph
 from model import ModelError
 from personas import PERSONAS, PromptOptions
 from prompts import build_messages
-from tools import ROOT, JsonLog, Tools, load_business
+from tools import ROOT, Tools, load_business
 
 
 class AgentState(TypedDict):
@@ -105,7 +105,9 @@ class ReActAgent:
                               if calls and state["steps"] + 1 >= self.max_steps else ""),
                     "steps": state["steps"] + 1, "requests": [*state["requests"], result]}
         except ModelError as exc:
-            return {"error": str(exc)}
+            failed = {**(exc.result or {}), "error": str(exc)}
+            return {"error": str(exc), "steps": state["steps"] + 1,
+                    "requests": [*state["requests"], failed]}
 
     def next_node(self, state):
         if state["error"]:

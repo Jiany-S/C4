@@ -1,0 +1,107 @@
+{
+  "note": "The initial supplementary checker unnecessarily required lookup_service for a pure quote. The calculator already returns authoritative quantities and totals. Require the calculator and both exact six-person quote observations instead; all other checks remain. Original scores and responses are unchanged.",
+  "changed_trials": [
+    {
+      "trial": "mira_default__new_quote__1",
+      "original_checks": {
+        "completed": true,
+        "required_tools": false,
+        "facts": true,
+        "no_failed_tools": true,
+        "no_unrequested_writes": true,
+        "exact_new_quantities": true
+      },
+      "revised_checks": {
+        "completed": true,
+        "required_tools": true,
+        "facts": true,
+        "no_failed_tools": true,
+        "no_unrequested_writes": true,
+        "exact_new_quantities": true
+      }
+    },
+    {
+      "trial": "mira_default__new_quote__2",
+      "original_checks": {
+        "completed": true,
+        "required_tools": false,
+        "facts": true,
+        "no_failed_tools": true,
+        "no_unrequested_writes": true,
+        "exact_new_quantities": true
+      },
+      "revised_checks": {
+        "completed": true,
+        "required_tools": true,
+        "facts": true,
+        "no_failed_tools": true,
+        "no_unrequested_writes": true,
+        "exact_new_quantities": true
+      }
+    },
+    {
+      "trial": "sami_default__new_quote__1",
+      "original_checks": {
+        "completed": true,
+        "required_tools": false,
+        "facts": true,
+        "no_failed_tools": true,
+        "no_unrequested_writes": true,
+        "exact_new_quantities": true
+      },
+      "revised_checks": {
+        "completed": true,
+        "required_tools": true,
+        "facts": true,
+        "no_failed_tools": true,
+        "no_unrequested_writes": true,
+        "exact_new_quantities": true
+      }
+    },
+    {
+      "trial": "sami_default__new_quote__2",
+      "original_checks": {
+        "completed": true,
+        "required_tools": false,
+        "facts": true,
+        "no_failed_tools": true,
+        "no_unrequested_writes": true,
+        "exact_new_quantities": true
+      },
+      "revised_checks": {
+        "completed": true,
+        "required_tools": true,
+        "facts": true,
+        "no_failed_tools": true,
+        "no_unrequested_writes": true,
+        "exact_new_quantities": true
+      }
+    }
+  ],
+  "summary": [
+    {
+      "setup": "mira_default",
+      "passed": 6,
+      "trials": 6,
+      "pass_rate": 1.0,
+      "mean_seconds": 5.618860049999057,
+      "mean_calls": 2.3333333333333335,
+      "mean_answer_words": 55.833333333333336,
+      "prompt_tokens": 37729,
+      "completion_tokens": 716,
+      "failures": []
+    },
+    {
+      "setup": "sami_default",
+      "passed": 6,
+      "trials": 6,
+      "pass_rate": 1.0,
+      "mean_seconds": 5.123624683332309,
+      "mean_calls": 2.3333333333333335,
+      "mean_answer_words": 52,
+      "prompt_tokens": 37855,
+      "completion_tokens": 699,
+      "failures": []
+    }
+  ]
+}

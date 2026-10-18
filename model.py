@@ -10,6 +10,10 @@ from tools import ROOT, TOOL_SCHEMAS
 class ModelError(RuntimeError):
     """An error safe to display without credentials or request bodies."""
 
+    def __init__(self, message, *, result=None):
+        super().__init__(message)
+        self.result = result
+
 
 class CallBudget:
     def __init__(self, limit=600):
@@ -54,14 +58,16 @@ class OpenAIModel:
         if not response.choices:
             raise ModelError("The model returned no choices.")
         choice = response.choices[0]
-        if choice.finish_reason in {"length", "content_filter"}:
-            raise ModelError("The model response was incomplete; increase the token limit or shorten the request.")
         msg = choice.message
         parsed = {"role": "assistant", "content": msg.content}
         if msg.tool_calls:
             parsed["tool_calls"] = [{"id": c.id, "type": "function", "function": {
                 "name": c.function.name, "arguments": c.function.arguments}} for c in msg.tool_calls]
-        return {"message": parsed, "usage": response.usage.model_dump() if response.usage else {},
+        result = {"message": parsed, "usage": response.usage.model_dump() if response.usage else {},
                 "model": response.model, "response_id": response.id,
                 "finish_reason": choice.finish_reason, "seconds": time.perf_counter() - start,
                 "settings": generation.options()}
+        if choice.finish_reason in {"length", "content_filter"}:
+            raise ModelError("The model response was incomplete; increase the token limit or shorten the request.",
+                             result=result)
+        return result

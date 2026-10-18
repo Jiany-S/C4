@@ -1,0 +1,20 @@
+{
+  "attempted_api_calls": 28,
+  "completed_utc": "2026-10-18T17:52:46.593170+00:00",
+  "sha256": {
+    "plan.json": "9b0727ffc25d66abe0985020be862608ff3eae40a95e9d122cc6c80bfed59642",
+    "summary.json": "afe8acdfc4b085792a9172be538d5dc7f82ef9d673aaf17df1d9b349495edaa3",
+    "trials/mira_default__ci_failure__1.json": "091f65e72a88aa517efee0691ea59fd0953f9bf37e38d4970782ed0a2bba719d",
+    "trials/mira_default__ci_failure__2.json": "22af5cfee9488c12aee0b8d8cd497c529cfe280f38476055b716d788b5db65f2",
+    "trials/mira_default__first_step__1.json": "dd4173a6a9002be7596071ea45906122a50405964e6e9e0723551ddc9874e0fd",
+    "trials/mira_default__first_step__2.json": "dba098182dfd0046b310496e521d57f1dc68323e61a9359eb65b0a1fa1625d9a",
+    "trials/mira_default__new_quote__1.json": "1b65bdd6bb191bb696a050f4495f6daa1c2d8edb2fb3eb87617b70229cf42258",
+    "trials/mira_default__new_quote__2.json": "340e5bf128e7e1e3687f98f52bd0a01d0c14fbfd741943b995697ec91bd9d68d",
+    "trials/sami_default__ci_failure__1.json": "a95130bf40cf2b76bee791a4615334f38ea90b1f876589223d1a1ebfcc74d312",
+    "trials/sami_default__ci_failure__2.json": "ffd3c7111fb5f95d753882c2bf9ff7aaebebc0b718736052aa62f19b5fd2b3d8",
+    "trials/sami_default__first_step__1.json": "38377454adb4972f2befa66e8ea66af5b2bac03e172bd25fa9ff0cdd17f52436",
+    "trials/sami_default__first_step__2.json": "62602644f4e8a75a994997e35824351d434ae2727135250746535fc8867de7f9",
+    "trials/sami_default__new_quote__1.json": "94f639f42985310224762df18a2f04922dedd7f752ce055d65f9b233bbb83f74",
+    "trials/sami_default__new_quote__2.json": "d24e0cae0e539cbb9ad1b9c952b2cdb7d7200969644fab7b13e4ac98cfac36fa"
+  }
+}

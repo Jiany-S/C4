@@ -1,0 +1,167 @@
+{
+  "trial_id": "mira_default__first_step__2",
+  "setup": "mira_default",
+  "case": "first_step",
+  "repetition": 2,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "I feel overwhelmed by my app idea and haven't settled the scope. Which service should I start with, and what is one small thing I can prepare?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_CClkPI2GZnUiiaqhA1iqPkBz",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"all\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Project Clarity": {
+                "minutes": 30,
+                "price_usd": 15,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Scope an idea and choose manageable next steps."
+              },
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              },
+              "Team Sprint": {
+                "minutes": 90,
+                "price_usd": 60,
+                "billing": "per team",
+                "capacity": 4,
+                "purpose": "Plan a project with a team of up to four students."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_CClkPI2GZnUiiaqhA1iqPkBz",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"all\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 14,
+            "prompt_tokens": 2615,
+            "total_tokens": 2629,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaPLaOHfBAPk9sOz1wvjhu76DrMLs",
+          "finish_reason": "tool_calls",
+          "seconds": 3.112038700004632,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Project Clarity is designed to help you scope your app idea and find manageable next steps, ideal for feeling overwhelmed.\",\"answer\":\"You should start with our Project Clarity service. It's a 30-minute session that helps you clarify and scope your app idea into manageable parts. To prepare, try writing down one or two key features or goals you want your app to have. This will give us a starting point to make your project clearer and less overwhelming.\"}"
+          },
+          "usage": {
+            "completion_tokens": 96,
+            "prompt_tokens": 2792,
+            "total_tokens": 2888,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaPLc9lAW6uexyTQ8QybFPRVDvmjY",
+          "finish_reason": "stop",
+          "seconds": 2.0949440999975195,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Project Clarity is designed to help you scope your app idea and find manageable next steps, ideal for feeling overwhelmed.",
+      "answer": "You should start with our Project Clarity service. It's a 30-minute session that helps you clarify and scope your app idea into manageable parts. To prepare, try writing down one or two key features or goals you want your app to have. This will give us a starting point to make your project clearer and less overwhelming.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 5.218356199999107,
+  "model_calls": 2,
+  "prompt_tokens": 5407,
+  "completion_tokens": 110,
+  "answer_words": 57
+}

@@ -179,5 +179,20 @@ def test_budget_limit():
         budget.take()
 
 
+def test_incomplete_response_keeps_usage_and_never_becomes_an_answer(tmp_path):
+    from openai.types.chat import ChatCompletion
+    response = ChatCompletion(id='truncated', created=0, model='gpt-4.1-mini', object='chat.completion',
+        choices=[{'index':0, 'finish_reason':'length', 'message':{
+            'role':'assistant', 'content':'{"answer":"unfinished'}}],
+        usage={'prompt_tokens':10,'completion_tokens':5,'total_tokens':15})
+    client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=lambda **kw:response)))
+    model = OpenAIModel(client=client)
+    answer, trace = ReActAgent(model, log_dir=tmp_path).respond('Hello', return_trace=True)
+    assert 'incomplete' in answer and 'unfinished' not in answer
+    assert trace['steps'] == 1 and trace['requests'][0]['usage']['total_tokens'] == 15
+    assert trace['requests'][0]['finish_reason'] == 'length'
+    assert trace['error']
+
+
 def test_gradio_history_text_blocks():
     assert normalize_history([{"role":"user", "content":[{"type":"text","text":"Hello"}]}]) == [{"role":"user","content":"Hello"}]

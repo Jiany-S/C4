@@ -1,0 +1,167 @@
+{
+  "trial_id": "sami_default__ci_failure__1",
+  "setup": "sami_default",
+  "case": "ci_failure",
+  "repetition": 1,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "sami",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.1,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "My API tests pass locally but fail intermittently in CI. Which service would help me diagnose this, and what two pieces of evidence should I bring?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_BJFJLq5AuL567fTAgH5Sdj5W",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"all\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Project Clarity": {
+                "minutes": 30,
+                "price_usd": 15,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Scope an idea and choose manageable next steps."
+              },
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              },
+              "Team Sprint": {
+                "minutes": 90,
+                "price_usd": 60,
+                "billing": "per team",
+                "capacity": 4,
+                "purpose": "Plan a project with a team of up to four students."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_BJFJLq5AuL567fTAgH5Sdj5W",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"all\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 14,
+            "prompt_tokens": 2624,
+            "total_tokens": 2638,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaPLk68gTA82TdXvjKfWYz6eE3K7n",
+          "finish_reason": "tool_calls",
+          "seconds": 1.9624077999978908,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.1,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Prototype Clinic is the best service for debugging and testing blockers like intermittent CI test failures. Bring a reproducible bug description and your test cases.\",\"answer\":\"For diagnosing intermittent API test failures in CI, the Prototype Clinic service is most suitable. It offers a 60-minute session focused on debugging and testing blockers. To prepare, bring two key pieces of evidence: 1) a clear, reproducible bug description outlining when and how the failure occurs, and 2) the relevant test cases or scripts that pass locally but fail in CI. This will help the coach understand and address your issue effectively.\"}"
+          },
+          "usage": {
+            "completion_tokens": 125,
+            "prompt_tokens": 2801,
+            "total_tokens": 2926,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaPLltSFGZW9DblNg8NWIXq9ak81e",
+          "finish_reason": "stop",
+          "seconds": 2.469572900001367,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.1,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.0,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Prototype Clinic is the best service for debugging and testing blockers like intermittent CI test failures. Bring a reproducible bug description and your test cases.",
+      "answer": "For diagnosing intermittent API test failures in CI, the Prototype Clinic service is most suitable. It offers a 60-minute session focused on debugging and testing blockers. To prepare, bring two key pieces of evidence: 1) a clear, reproducible bug description outlining when and how the failure occurs, and 2) the relevant test cases or scripts that pass locally but fail in CI. This will help the coach understand and address your issue effectively.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 4.437000600002648,
+  "model_calls": 2,
+  "prompt_tokens": 5425,
+  "completion_tokens": 139,
+  "answer_words": 73
+}

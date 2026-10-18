@@ -93,7 +93,8 @@ print('Scenarios:',', '.join(c['id'] for c in CASES))'''),
         md('''## 8 Results and limitations
 The analysis uses saved real executions. It separates functional checks from subjective naturalness. The original runs and scores remain unchanged; a separate scoring revision corrects a typographic-apostrophe false failure. The first development run is retained for comparison.'''),
         code('''display(Markdown(Path('docs/experiment_results.md').read_text(encoding='utf-8')))
-display(pd.read_csv('evidence/comparison.csv'))'''),
+display(pd.read_csv('evidence/comparison.csv'))
+display(Markdown(Path('docs/new_scenarios.md').read_text(encoding='utf-8')))'''),
         md('''## 9 Automated verification
 These tests exercise actual LangGraph transitions and local functions with scripted model outputs, including tool errors, memory, exact observations, deduplication, limits, and final-answer parsing. They establish orchestration behavior, not live model quality.'''),
         code('''result=subprocess.run([sys.executable,'-m','pytest','tests','-q'],capture_output=True,text=True)
