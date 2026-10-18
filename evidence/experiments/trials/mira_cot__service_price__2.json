@@ -1,0 +1,153 @@
+{
+  "trial_id": "mira_cot__service_price__2",
+  "setup": "mira_cot",
+  "case": "service_price",
+  "repetition": 2,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": true,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "What does Prototype Clinic cost and how long is it?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_1SnuSYUFzOaMH1WmKWWFt2Vw",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"Prototype Clinic\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_1SnuSYUFzOaMH1WmKWWFt2Vw",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"Prototype Clinic\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 15,
+            "prompt_tokens": 2602,
+            "total_tokens": 2617,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNaQJPvFqVsON1FmliBuTKeagm9y",
+          "finish_reason": "tool_calls",
+          "seconds": 1.4241967999987537,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Prototype Clinic lasts 60 minutes and costs USD 30 per student.\",\"answer\":\"Prototype Clinic is a 60-minute online coaching session focused on debugging and testing blockers. It costs USD 30 per student.\"}"
+          },
+          "usage": {
+            "completion_tokens": 47,
+            "prompt_tokens": 2686,
+            "total_tokens": 2733,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNaSRXLjBCHJq9u9FP7OroEjrtAH",
+          "finish_reason": "stop",
+          "seconds": 1.4462039999998524,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Prototype Clinic lasts 60 minutes and costs USD 30 per student.",
+      "answer": "Prototype Clinic is a 60-minute online coaching session focused on debugging and testing blockers. It costs USD 30 per student.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 2.8792227000012645,
+  "model_calls": 2,
+  "prompt_tokens": 5288,
+  "completion_tokens": 62,
+  "answer_words": 20
+}

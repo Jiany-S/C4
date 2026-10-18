@@ -1,0 +1,7 @@
+{
+  "mode": "fresh kernel; actual Python/SDK/Gradio imports, MOCK model tests",
+  "code_cells_executed": 11,
+  "live_api_in_notebook": "disabled",
+  "ui_server_in_notebook": "disabled",
+  "status": "PASS"
+}

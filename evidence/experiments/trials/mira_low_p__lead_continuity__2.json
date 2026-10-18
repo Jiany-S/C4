@@ -1,0 +1,222 @@
+{
+  "trial_id": "mira_low_p__lead_continuity__2",
+  "setup": "mira_low_p",
+  "case": "lead_continuity",
+  "repetition": 2,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 1,
+        "top_p": 0.5,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "Please ask staff to contact me about Prototype Clinic for my API project. My name is Example Learner.",
+      "history": [],
+      "steps": 1,
+      "events": [],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"A follow-up is requested, but the email is missing.\",\"answer\":\"What valid email address should staff use for your Prototype Clinic follow-up about your API project?\"}"
+          },
+          "usage": {
+            "completion_tokens": 38,
+            "prompt_tokens": 2606,
+            "total_tokens": 2644,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNZ9aRt8qGPEME908dGJACjbxL4n",
+          "finish_reason": "stop",
+          "seconds": 1.3109661000016786,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 1,
+            "top_p": 0.5,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "A follow-up is requested, but the email is missing.",
+      "answer": "What valid email address should staff use for your Prototype Clinic follow-up about your API project?",
+      "error": ""
+    },
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 1,
+        "top_p": 0.5,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "My email is learner@example.com.",
+      "history": [
+        {
+          "role": "user",
+          "content": "Please ask staff to contact me about Prototype Clinic for my API project. My name is Example Learner."
+        },
+        {
+          "role": "assistant",
+          "content": "What valid email address should staff use for your Prototype Clinic follow-up about your API project?"
+        }
+      ],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_qZ1uj388P2nh6hMwyHLRFxbn",
+          "tool": "record_customer_interest",
+          "arguments": "{\"email\":\"learner@example.com\",\"name\":\"Example Learner\",\"message\":\"Interested in Prototype Clinic for my API project.\"}",
+          "observation": {
+            "ok": true,
+            "record_id": "2033428f-1997-46c9-8bd1-d33342e6ffca",
+            "kind": "leads",
+            "storage": "local JSONL"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_qZ1uj388P2nh6hMwyHLRFxbn",
+                "type": "function",
+                "function": {
+                  "name": "record_customer_interest",
+                  "arguments": "{\"email\":\"learner@example.com\",\"name\":\"Example Learner\",\"message\":\"Interested in Prototype Clinic for my API project.\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 36,
+            "prompt_tokens": 2639,
+            "total_tokens": 2675,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNZBFFlQy10gDiuteuNdlZgKremn",
+          "finish_reason": "tool_calls",
+          "seconds": 1.4464324000000488,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 1,
+            "top_p": 0.5,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"The customer's contact details and interest in Prototype Clinic were recorded successfully for staff follow-up.\",\"answer\":\"Thank you, Example Learner. Your request for staff to contact you about the Prototype Clinic for your API project has been recorded. Staff aim to respond within two business days.\"}"
+          },
+          "usage": {
+            "completion_tokens": 60,
+            "prompt_tokens": 2732,
+            "total_tokens": 2792,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNZCjoDEQHRXbdaaLzZ6hhFst8K9",
+          "finish_reason": "stop",
+          "seconds": 1.4531457999983104,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 1,
+            "top_p": 0.5,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "The customer's contact details and interest in Prototype Clinic were recorded successfully for staff follow-up.",
+      "answer": "Thank you, Example Learner. Your request for staff to contact you about the Prototype Clinic for your API project has been recorded. Staff aim to respond within two business days.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true,
+    "no_premature_save": true,
+    "asks_missing_email": true,
+    "exact_contact": true
+  },
+  "passed": true,
+  "seconds": 4.223845799999253,
+  "model_calls": 3,
+  "prompt_tokens": 7977,
+  "completion_tokens": 134,
+  "answer_words": 30
+}

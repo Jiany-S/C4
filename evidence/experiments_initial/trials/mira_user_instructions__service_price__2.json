@@ -1,0 +1,116 @@
+{
+  "trial_id": "mira_user_instructions__service_price__2",
+  "setup": "mira_user_instructions",
+  "case": "service_price",
+  "repetition": 2,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "user",
+        "detailed": true
+      },
+      "input": "What does Prototype Clinic cost and how long is it?",
+      "history": [],
+      "steps": 1,
+      "events": [
+        {
+          "tool_call_id": "call_aMVUrBA0ERupj6lHm5nkBZnw",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"Prototype Clinic\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_aMVUrBA0ERupj6lHm5nkBZnw",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"Prototype Clinic\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 15,
+            "prompt_tokens": 2531,
+            "total_tokens": 2546,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNKR7OTmhil3YHKnXTiM0bq7JtfF",
+          "finish_reason": "tool_calls",
+          "seconds": 5.501232499998878,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "",
+      "answer": "Model request failed. Check the connection and retry.",
+      "error": "Model request failed. Check the connection and retry."
+    }
+  ],
+  "checks": {
+    "completed": false,
+    "required_tools": true,
+    "facts": false,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": false,
+  "seconds": 25.55693869999959,
+  "model_calls": 1,
+  "prompt_tokens": 2531,
+  "completion_tokens": 15,
+  "answer_words": 8
+}

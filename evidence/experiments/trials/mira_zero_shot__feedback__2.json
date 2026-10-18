@@ -1,0 +1,146 @@
+{
+  "trial_id": "mira_zero_shot__feedback__2",
+  "setup": "mira_zero_shot",
+  "case": "feedback",
+  "repetition": 2,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": false,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "Feedback: please add evening coaching sessions.",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_uIYZcOnYAXhy0TPddCMSo03V",
+          "tool": "record_feedback",
+          "arguments": "{\"question\":\"Please add evening coaching sessions.\"}",
+          "observation": {
+            "ok": true,
+            "record_id": "018a09e4-4d26-4470-b1bd-3a81e4ca1a7a",
+            "kind": "feedback",
+            "storage": "local JSONL"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_uIYZcOnYAXhy0TPddCMSo03V",
+                "type": "function",
+                "function": {
+                  "name": "record_feedback",
+                  "arguments": "{\"question\":\"Please add evening coaching sessions.\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 19,
+            "prompt_tokens": 2378,
+            "total_tokens": 2397,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNZIZhWlsb5PAzYoJaapuDkSRsCp",
+          "finish_reason": "tool_calls",
+          "seconds": 2.7816734999978507,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Recorded customer feedback for adding evening coaching sessions.\",\"answer\":\"Thank you for your suggestion to add evening coaching sessions. I've recorded your feedback for our team to consider. We currently offer sessions Monday to Friday from 10:00 to 18:00 Beirut time. If you have any other ideas or questions, feel free to share them!\"}"
+          },
+          "usage": {
+            "completion_tokens": 73,
+            "prompt_tokens": 2456,
+            "total_tokens": 2529,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2176,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNZKCoZN3nSFI9ehJ4SUjbWm3o9D",
+          "finish_reason": "stop",
+          "seconds": 1.5145451999997022,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Recorded customer feedback for adding evening coaching sessions.",
+      "answer": "Thank you for your suggestion to add evening coaching sessions. I've recorded your feedback for our team to consider. We currently offer sessions Monday to Friday from 10:00 to 18:00 Beirut time. If you have any other ideas or questions, feel free to share them!",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 4.303078600001754,
+  "model_calls": 2,
+  "prompt_tokens": 4834,
+  "completion_tokens": 92,
+  "answer_words": 45
+}

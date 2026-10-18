@@ -1,0 +1,147 @@
+{
+  "trial_id": "mira_zero_shot__unknown_policy__1",
+  "setup": "mira_zero_shot",
+  "case": "unknown_policy",
+  "repetition": 1,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": false,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "What is your refund policy?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_XicHTT2koiVtQu4kE1l6fqCK",
+          "tool": "record_feedback",
+          "arguments": "{\"question\":\"What is your refund policy?\"}",
+          "observation": {
+            "ok": true,
+            "record_id": "2a08b672-98f7-4745-b269-e0ce44a505e4",
+            "kind": "feedback",
+            "storage": "local JSONL"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_XicHTT2koiVtQu4kE1l6fqCK",
+                "type": "function",
+                "function": {
+                  "name": "record_feedback",
+                  "arguments": "{\"question\":\"What is your refund policy?\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 19,
+            "prompt_tokens": 2376,
+            "total_tokens": 2395,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2176,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNakdfcDHEPhq9pva21SaBhF35ja",
+          "finish_reason": "tool_calls",
+          "seconds": 2.6683597000010195,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"No refund policy is published; question recorded for staff review.\",\"answer\":\"We do not have a published refund policy at this time. I've noted your question for our team to review. If you have other questions or want to explore our services, I'm here to help!\"}"
+          },
+          "usage": {
+            "completion_tokens": 59,
+            "prompt_tokens": 2450,
+            "total_tokens": 2509,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2176,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNamp2PZkPLVpGdNdOYYZZ2s77tv",
+          "finish_reason": "stop",
+          "seconds": 1.7346723999980895,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "No refund policy is published; question recorded for staff review.",
+      "answer": "We do not have a published refund policy at this time. I've noted your question for our team to review. If you have other questions or want to explore our services, I'm here to help!",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true,
+    "acknowledges_unknown": true
+  },
+  "passed": true,
+  "seconds": 4.409868200000346,
+  "model_calls": 2,
+  "prompt_tokens": 4826,
+  "completion_tokens": 78,
+  "answer_words": 35
+}

@@ -1,0 +1,357 @@
+{
+  "trial_id": "mira_cot__team_quote__2",
+  "setup": "mira_cot",
+  "case": "team_quote",
+  "repetition": 2,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": true,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "Compare Team Sprint with Prototype Clinic for five students, then estimate two Team Sprint sessions. Explain how the team size affects billing.",
+      "history": [],
+      "steps": 5,
+      "events": [
+        {
+          "tool_call_id": "call_Rd6e5tze0Nb8tJbopbrLoWia",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"all\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Project Clarity": {
+                "minutes": 30,
+                "price_usd": 15,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Scope an idea and choose manageable next steps."
+              },
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              },
+              "Team Sprint": {
+                "minutes": 90,
+                "price_usd": 60,
+                "billing": "per team",
+                "capacity": 4,
+                "purpose": "Plan a project with a team of up to four students."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        },
+        {
+          "tool_call_id": "call_7BvpZzyZN0tXyvwlXnUmyZ5p",
+          "tool": "calculate_quote",
+          "arguments": "{\"service\":\"Team Sprint\",\"people\":5,\"sessions\":1}",
+          "observation": {
+            "ok": true,
+            "service": "Team Sprint",
+            "people": 5,
+            "sessions": 1,
+            "billing_units_per_session": 2,
+            "total_usd": 120,
+            "basis": "Published prices; no discounts assumed",
+            "booking_confirmed": false
+          },
+          "reused": false
+        },
+        {
+          "tool_call_id": "call_k1mU6PoEZhK2eM1KSmIIpONB",
+          "tool": "calculate_quote",
+          "arguments": "{\"service\":\"Prototype Clinic\",\"people\":5,\"sessions\":1}",
+          "observation": {
+            "ok": true,
+            "service": "Prototype Clinic",
+            "people": 5,
+            "sessions": 1,
+            "billing_units_per_session": 5,
+            "total_usd": 150,
+            "basis": "Published prices; no discounts assumed",
+            "booking_confirmed": false
+          },
+          "reused": false
+        },
+        {
+          "tool_call_id": "call_IIFcWgtiMhVe5jOmYLAztDHh",
+          "tool": "calculate_quote",
+          "arguments": "{\"service\":\"Team Sprint\",\"people\":4,\"sessions\":2}",
+          "observation": {
+            "ok": true,
+            "service": "Team Sprint",
+            "people": 4,
+            "sessions": 2,
+            "billing_units_per_session": 1,
+            "total_usd": 120,
+            "basis": "Published prices; no discounts assumed",
+            "booking_confirmed": false
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_Rd6e5tze0Nb8tJbopbrLoWia",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"all\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 14,
+            "prompt_tokens": 2542,
+            "total_tokens": 2556,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNMQZUJfmvVCLwCKq9CUyFuX3jtS",
+          "finish_reason": "tool_calls",
+          "seconds": 1.1203977999975905,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_7BvpZzyZN0tXyvwlXnUmyZ5p",
+                "type": "function",
+                "function": {
+                  "name": "calculate_quote",
+                  "arguments": "{\"service\":\"Team Sprint\",\"people\":5,\"sessions\":1}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 23,
+            "prompt_tokens": 2719,
+            "total_tokens": 2742,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNMRXgcnSGS6ZVG8UbzDLsSlkI9e",
+          "finish_reason": "tool_calls",
+          "seconds": 0.8710937999967427,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_k1mU6PoEZhK2eM1KSmIIpONB",
+                "type": "function",
+                "function": {
+                  "name": "calculate_quote",
+                  "arguments": "{\"service\":\"Prototype Clinic\",\"people\":5,\"sessions\":1}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 23,
+            "prompt_tokens": 2809,
+            "total_tokens": 2832,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2304,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNMSqThjan1NKLCcEKb8D6WFLYzD",
+          "finish_reason": "tool_calls",
+          "seconds": 0.9339073999981338,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_IIFcWgtiMhVe5jOmYLAztDHh",
+                "type": "function",
+                "function": {
+                  "name": "calculate_quote",
+                  "arguments": "{\"service\":\"Team Sprint\",\"people\":4,\"sessions\":2}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 23,
+            "prompt_tokens": 2899,
+            "total_tokens": 2922,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNMTtyM7uZVhjI2tR4Eus0a4XOAW",
+          "finish_reason": "tool_calls",
+          "seconds": 0.9638054999995802,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Compared Team Sprint and Prototype Clinic costs for five students, and estimated two Team Sprint sessions for a full team of four.\",\"answer\":\"Team Sprint is a 90-minute project planning workshop priced at USD 60 per team for up to four students. Since your group has five students, it counts as two teams for billing, costing USD 120 for one session.\\n\\nPrototype Clinic is a 60-minute debugging and testing coaching session billed per student at USD 30 each. For five students, one session costs USD 150.\\n\\nFor two Team Sprint sessions with a team size of four students (the maximum per team), the total cost would be USD 120 (2 sessions \u00d7 USD 60 per team).\\n\\nIn summary, Team Sprint charges per team with a maximum of four students each, so if your group is larger, you pay for multiple teams. Prototype Clinic charges per student regardless of group size.\"}"
+          },
+          "usage": {
+            "completion_tokens": 191,
+            "prompt_tokens": 2989,
+            "total_tokens": 3180,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNMUFOrizA8Wu3t2sBYJRfPkBpry",
+          "finish_reason": "stop",
+          "seconds": 1.7450467000016943,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Compared Team Sprint and Prototype Clinic costs for five students, and estimated two Team Sprint sessions for a full team of four.",
+      "answer": "Team Sprint is a 90-minute project planning workshop priced at USD 60 per team for up to four students. Since your group has five students, it counts as two teams for billing, costing USD 120 for one session.\n\nPrototype Clinic is a 60-minute debugging and testing coaching session billed per student at USD 30 each. For five students, one session costs USD 150.\n\nFor two Team Sprint sessions with a team size of four students (the maximum per team), the total cost would be USD 120 (2 sessions \u00d7 USD 60 per team).\n\nIn summary, Team Sprint charges per team with a maximum of four students each, so if your group is larger, you pay for multiple teams. Prototype Clinic charges per student regardless of group size.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": false,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true,
+    "quote_arguments": false
+  },
+  "passed": false,
+  "seconds": 5.646680099998775,
+  "model_calls": 5,
+  "prompt_tokens": 13958,
+  "completion_tokens": 274,
+  "answer_words": 127
+}

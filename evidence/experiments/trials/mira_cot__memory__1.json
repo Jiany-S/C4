@@ -1,0 +1,104 @@
+{
+  "trial_id": "mira_cot__memory__1",
+  "setup": "mira_cot",
+  "case": "memory",
+  "repetition": 1,
+  "history_fixture": [
+    {
+      "role": "user",
+      "content": "I am interested in Team Sprint for my project group."
+    },
+    {
+      "role": "assistant",
+      "content": "What would your group like to work on?"
+    }
+  ],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": true,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "Which service did I ask about?",
+      "history": [
+        {
+          "role": "user",
+          "content": "I am interested in Team Sprint for my project group."
+        },
+        {
+          "role": "assistant",
+          "content": "What would your group like to work on?"
+        }
+      ],
+      "steps": 1,
+      "events": [],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"The customer mentioned interest in the Team Sprint service.\",\"answer\":\"You asked about the Team Sprint service for your project group.\"}"
+          },
+          "usage": {
+            "completion_tokens": 30,
+            "prompt_tokens": 2626,
+            "total_tokens": 2656,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNZ62fVn2j7SVO6ck1RhmVZQtXqi",
+          "finish_reason": "stop",
+          "seconds": 2.0171289999998407,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "The customer mentioned interest in the Team Sprint service.",
+      "answer": "You asked about the Team Sprint service for your project group.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 2.021244300001854,
+  "model_calls": 1,
+  "prompt_tokens": 2626,
+  "completion_tokens": 30,
+  "answer_words": 11
+}

@@ -1,0 +1,153 @@
+{
+  "trial_id": "mira_minimal__technical_advice__2",
+  "setup": "mira_minimal",
+  "case": "technical_advice",
+  "repetition": 2,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": false
+      },
+      "input": "My API tests fail intermittently. Which service fits, and what two things should I prepare so I can work on my own project?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_Q9IhVAEbxjCuJbK47YHitkEm",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"Prototype Clinic\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_Q9IhVAEbxjCuJbK47YHitkEm",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"Prototype Clinic\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 15,
+            "prompt_tokens": 2271,
+            "total_tokens": 2286,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNZe57lAftmTryvET6UHfUwwtpog",
+          "finish_reason": "tool_calls",
+          "seconds": 1.0425263999968593,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Prototype Clinic is the best fit for debugging and testing issues like intermittent API test failures.\",\"answer\":\"The Prototype Clinic service is designed to help you work through debugging and testing blockers, including intermittent API test failures. It is a 60-minute online session costing USD 30 per student. To prepare, bring your current test code and a description of the intermittent failure symptoms or error messages. This way, the coaching can focus on your specific problem and help you find practical next steps.\"}"
+          },
+          "usage": {
+            "completion_tokens": 101,
+            "prompt_tokens": 2355,
+            "total_tokens": 2456,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2176,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNZfJcF5q4mATSnHp02tglPChpdN",
+          "finish_reason": "stop",
+          "seconds": 1.543630399999529,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Prototype Clinic is the best fit for debugging and testing issues like intermittent API test failures.",
+      "answer": "The Prototype Clinic service is designed to help you work through debugging and testing blockers, including intermittent API test failures. It is a 60-minute online session costing USD 30 per student. To prepare, bring your current test code and a description of the intermittent failure symptoms or error messages. This way, the coaching can focus on your specific problem and help you find practical next steps.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 2.5907866999987164,
+  "model_calls": 2,
+  "prompt_tokens": 4626,
+  "completion_tokens": 116,
+  "answer_words": 66
+}

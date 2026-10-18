@@ -1,0 +1,251 @@
+{
+  "note": "Re-scoring only: raw traces and original scores unchanged. Corrected quote selection to accept any exact requested quote, and accepted an explicit not-to-write refusal. No live API calls.",
+  "summary": [
+    {
+      "setup": "mira_cot",
+      "passed": 15,
+      "trials": 16,
+      "pass_rate": 0.9375,
+      "mean_seconds": 3.8304515687500498,
+      "mean_calls": 2.1875,
+      "mean_answer_words": 42.75,
+      "prompt_tokens": 91875,
+      "completion_tokens": 1644,
+      "failures": [
+        {
+          "trial": "mira_cot__team_quote__2",
+          "checks": [
+            "facts",
+            "quote_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_default",
+      "passed": 15,
+      "trials": 16,
+      "pass_rate": 0.9375,
+      "mean_seconds": 4.724500281250357,
+      "mean_calls": 2.25,
+      "mean_answer_words": 42.25,
+      "prompt_tokens": 94750,
+      "completion_tokens": 1679,
+      "failures": [
+        {
+          "trial": "mira_default__team_quote__1",
+          "checks": [
+            "facts",
+            "quote_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_frequency",
+      "passed": 16,
+      "trials": 16,
+      "pass_rate": 1.0,
+      "mean_seconds": 4.25027947500007,
+      "mean_calls": 2.25,
+      "mean_answer_words": 41.25,
+      "prompt_tokens": 94604,
+      "completion_tokens": 1596,
+      "failures": []
+    },
+    {
+      "setup": "mira_low_p",
+      "passed": 14,
+      "trials": 16,
+      "pass_rate": 0.875,
+      "mean_seconds": 3.6586734249992787,
+      "mean_calls": 2.25,
+      "mean_answer_words": 42.0625,
+      "prompt_tokens": 94701,
+      "completion_tokens": 1645,
+      "failures": [
+        {
+          "trial": "mira_low_p__team_quote__1",
+          "checks": [
+            "facts",
+            "quote_arguments"
+          ]
+        },
+        {
+          "trial": "mira_low_p__team_quote__2",
+          "checks": [
+            "facts",
+            "quote_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_low_temp",
+      "passed": 15,
+      "trials": 16,
+      "pass_rate": 0.9375,
+      "mean_seconds": 3.8603686187500443,
+      "mean_calls": 2.25,
+      "mean_answer_words": 43.5625,
+      "prompt_tokens": 94699,
+      "completion_tokens": 1688,
+      "failures": [
+        {
+          "trial": "mira_low_temp__team_quote__2",
+          "checks": [
+            "facts",
+            "quote_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_minimal",
+      "passed": 15,
+      "trials": 16,
+      "pass_rate": 0.9375,
+      "mean_seconds": 3.681222087500373,
+      "mean_calls": 2.125,
+      "mean_answer_words": 42.8125,
+      "prompt_tokens": 79611,
+      "completion_tokens": 1641,
+      "failures": [
+        {
+          "trial": "mira_minimal__team_quote__1",
+          "checks": [
+            "facts",
+            "quote_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_p_control",
+      "passed": 15,
+      "trials": 16,
+      "pass_rate": 0.9375,
+      "mean_seconds": 3.704598718749594,
+      "mean_calls": 2.1875,
+      "mean_answer_words": 44.375,
+      "prompt_tokens": 91583,
+      "completion_tokens": 1725,
+      "failures": [
+        {
+          "trial": "mira_p_control__team_quote__2",
+          "checks": [
+            "facts",
+            "quote_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_presence",
+      "passed": 15,
+      "trials": 16,
+      "pass_rate": 0.9375,
+      "mean_seconds": 5.742093662500565,
+      "mean_calls": 2.25,
+      "mean_answer_words": 42.9375,
+      "prompt_tokens": 94743,
+      "completion_tokens": 1660,
+      "failures": [
+        {
+          "trial": "mira_presence__team_quote__1",
+          "checks": [
+            "facts",
+            "quote_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_short",
+      "passed": 14,
+      "trials": 16,
+      "pass_rate": 0.875,
+      "mean_seconds": 3.845960893750089,
+      "mean_calls": 2.125,
+      "mean_answer_words": 30.4375,
+      "prompt_tokens": 88643,
+      "completion_tokens": 1296,
+      "failures": [
+        {
+          "trial": "mira_short__team_quote__1",
+          "checks": [
+            "completed",
+            "facts",
+            "quote_arguments"
+          ]
+        },
+        {
+          "trial": "mira_short__team_quote__2",
+          "checks": [
+            "completed",
+            "facts",
+            "quote_arguments"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_user_instructions",
+      "passed": 14,
+      "trials": 16,
+      "pass_rate": 0.875,
+      "mean_seconds": 4.623271143749889,
+      "mean_calls": 2.0625,
+      "mean_answer_words": 39.0625,
+      "prompt_tokens": 86205,
+      "completion_tokens": 1534,
+      "failures": [
+        {
+          "trial": "mira_user_instructions__integrity__1",
+          "checks": [
+            "no_unrequested_writes"
+          ]
+        },
+        {
+          "trial": "mira_user_instructions__service_price__2",
+          "checks": [
+            "completed",
+            "facts"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "mira_zero_shot",
+      "passed": 15,
+      "trials": 16,
+      "pass_rate": 0.9375,
+      "mean_seconds": 4.544828243750089,
+      "mean_calls": 2.1875,
+      "mean_answer_words": 51.5625,
+      "prompt_tokens": 83969,
+      "completion_tokens": 1947,
+      "failures": [
+        {
+          "trial": "mira_zero_shot__lead_continuity__1",
+          "checks": [
+            "no_failed_tools",
+            "no_premature_save"
+          ]
+        }
+      ]
+    },
+    {
+      "setup": "sami_default",
+      "passed": 16,
+      "trials": 16,
+      "pass_rate": 1.0,
+      "mean_seconds": 3.5601268187501773,
+      "mean_calls": 2.25,
+      "mean_answer_words": 39.1875,
+      "prompt_tokens": 95035,
+      "completion_tokens": 1632,
+      "failures": []
+    }
+  ]
+}

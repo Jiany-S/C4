@@ -1,0 +1,146 @@
+{
+  "trial_id": "mira_low_p__feedback__1",
+  "setup": "mira_low_p",
+  "case": "feedback",
+  "repetition": 1,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 1,
+        "top_p": 0.5,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "Feedback: please add evening coaching sessions.",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_pbtLBQmuKNkg2KNcOsrqpume",
+          "tool": "record_feedback",
+          "arguments": "{\"question\":\"Please add evening coaching sessions.\"}",
+          "observation": {
+            "ok": true,
+            "record_id": "ecf3e589-d026-4c75-950e-b347043172a4",
+            "kind": "feedback",
+            "storage": "local JSONL"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_pbtLBQmuKNkg2KNcOsrqpume",
+                "type": "function",
+                "function": {
+                  "name": "record_feedback",
+                  "arguments": "{\"question\":\"Please add evening coaching sessions.\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 19,
+            "prompt_tokens": 2593,
+            "total_tokens": 2612,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNaga25XjdFroGMmw9voUlsHLS3p",
+          "finish_reason": "tool_calls",
+          "seconds": 1.8922546999965562,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 1,
+            "top_p": 0.5,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Customer feedback about adding evening sessions was recorded successfully.\",\"answer\":\"Thank you for your suggestion to add evening coaching sessions. I've shared this feedback with our team for their consideration.\"}"
+          },
+          "usage": {
+            "completion_tokens": 40,
+            "prompt_tokens": 2665,
+            "total_tokens": 2705,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNaiULwUqreMm3YGR5V9KGgvYmPM",
+          "finish_reason": "stop",
+          "seconds": 1.9204250999973738,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 1,
+            "top_p": 0.5,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "Customer feedback about adding evening sessions was recorded successfully.",
+      "answer": "Thank you for your suggestion to add evening coaching sessions. I've shared this feedback with our team for their consideration.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 3.8202955999986443,
+  "model_calls": 2,
+  "prompt_tokens": 5258,
+  "completion_tokens": 59,
+  "answer_words": 20
+}

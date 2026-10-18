@@ -1,0 +1,167 @@
+{
+  "trial_id": "mira_short__technical_advice__1",
+  "setup": "mira_short",
+  "case": "technical_advice",
+  "repetition": 1,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 180
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "My API tests fail intermittently. Which service fits, and what two things should I prepare so I can work on my own project?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_YqhhyF2d1BIdHhpaeDPcJgMZ",
+          "tool": "lookup_service",
+          "arguments": "{\"service\":\"all\"}",
+          "observation": {
+            "ok": true,
+            "services": {
+              "Project Clarity": {
+                "minutes": 30,
+                "price_usd": 15,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Scope an idea and choose manageable next steps."
+              },
+              "Prototype Clinic": {
+                "minutes": 60,
+                "price_usd": 30,
+                "billing": "per student",
+                "capacity": 1,
+                "purpose": "Work through debugging and testing blockers."
+              },
+              "Team Sprint": {
+                "minutes": 90,
+                "price_usd": 60,
+                "billing": "per team",
+                "capacity": 4,
+                "purpose": "Plan a project with a team of up to four students."
+              }
+            },
+            "source": "CedarBridge published profile"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_YqhhyF2d1BIdHhpaeDPcJgMZ",
+                "type": "function",
+                "function": {
+                  "name": "lookup_service",
+                  "arguments": "{\"service\":\"all\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 14,
+            "prompt_tokens": 2612,
+            "total_tokens": 2626,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNYUTSZWD0jjl11qwchHfSY5ZFbp",
+          "finish_reason": "tool_calls",
+          "seconds": 1.6464610000002722,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 180
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"Prototype Clinic is the best fit for intermittent API test failures, focusing on debugging and testing blockers.\",\"answer\":\"For your intermittent API test failures, Prototype Clinic is the best fit. It is a 60-minute session to help you work through debugging and testing issues. To prepare, bring your current test code and a description of the specific problems or error patterns you see. This way, you can get coaching to fix your tests and learn to improve them yourself.\"}"
+          },
+          "usage": {
+            "completion_tokens": 97,
+            "prompt_tokens": 2789,
+            "total_tokens": 2886,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 2432,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNYV6Io641IcDvN2s2ukHl6cXsrX",
+          "finish_reason": "stop",
+          "seconds": 2.039261300000362,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 180
+          }
+        }
+      ],
+      "decision_summary": "Prototype Clinic is the best fit for intermittent API test failures, focusing on debugging and testing blockers.",
+      "answer": "For your intermittent API test failures, Prototype Clinic is the best fit. It is a 60-minute session to help you work through debugging and testing issues. To prepare, bring your current test code and a description of the specific problems or error patterns you see. This way, you can get coaching to fix your tests and learn to improve them yourself.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true
+  },
+  "passed": true,
+  "seconds": 3.706382599997596,
+  "model_calls": 2,
+  "prompt_tokens": 5401,
+  "completion_tokens": 111,
+  "answer_words": 61
+}

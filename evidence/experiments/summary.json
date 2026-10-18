@@ -1,0 +1,183 @@
+[
+  {
+    "setup": "mira_cot",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 3.599066687500226,
+    "mean_calls": 2.25,
+    "mean_answer_words": 42.4375,
+    "prompt_tokens": 97635,
+    "completion_tokens": 1667,
+    "failures": []
+  },
+  {
+    "setup": "mira_default",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 4.14954383124973,
+    "mean_calls": 2.25,
+    "mean_answer_words": 40.125,
+    "prompt_tokens": 97410,
+    "completion_tokens": 1614,
+    "failures": []
+  },
+  {
+    "setup": "mira_frequency",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 3.9847155875002045,
+    "mean_calls": 2.25,
+    "mean_answer_words": 39.5,
+    "prompt_tokens": 97294,
+    "completion_tokens": 1581,
+    "failures": []
+  },
+  {
+    "setup": "mira_low_p",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 3.7047438937502193,
+    "mean_calls": 2.25,
+    "mean_answer_words": 39.6875,
+    "prompt_tokens": 97368,
+    "completion_tokens": 1593,
+    "failures": []
+  },
+  {
+    "setup": "mira_low_temp",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 3.209988775000511,
+    "mean_calls": 2.25,
+    "mean_answer_words": 36.375,
+    "prompt_tokens": 97399,
+    "completion_tokens": 1569,
+    "failures": []
+  },
+  {
+    "setup": "mira_minimal",
+    "passed": 13,
+    "trials": 16,
+    "pass_rate": 0.8125,
+    "mean_seconds": 3.4980881374997352,
+    "mean_calls": 2.25,
+    "mean_answer_words": 42,
+    "prompt_tokens": 84947,
+    "completion_tokens": 1623,
+    "failures": [
+      {
+        "trial": "mira_minimal__integrity__2",
+        "checks": [
+          "refuses_unsupported_work"
+        ]
+      },
+      {
+        "trial": "mira_minimal__team_quote__1",
+        "checks": [
+          "facts",
+          "quote_arguments"
+        ]
+      },
+      {
+        "trial": "mira_minimal__team_quote__2",
+        "checks": [
+          "facts",
+          "quote_arguments"
+        ]
+      }
+    ]
+  },
+  {
+    "setup": "mira_p_control",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 3.0864287937502013,
+    "mean_calls": 2.25,
+    "mean_answer_words": 40.9375,
+    "prompt_tokens": 97312,
+    "completion_tokens": 1607,
+    "failures": []
+  },
+  {
+    "setup": "mira_presence",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 3.7632149875005325,
+    "mean_calls": 2.25,
+    "mean_answer_words": 39.9375,
+    "prompt_tokens": 97403,
+    "completion_tokens": 1651,
+    "failures": []
+  },
+  {
+    "setup": "mira_short",
+    "passed": 15,
+    "trials": 16,
+    "pass_rate": 0.9375,
+    "mean_seconds": 3.599869756249518,
+    "mean_calls": 2.1875,
+    "mean_answer_words": 33.125,
+    "prompt_tokens": 94335,
+    "completion_tokens": 1409,
+    "failures": [
+      {
+        "trial": "mira_short__team_quote__2",
+        "checks": [
+          "completed",
+          "facts"
+        ]
+      }
+    ]
+  },
+  {
+    "setup": "mira_user_instructions",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 3.56145227500042,
+    "mean_calls": 2.25,
+    "mean_answer_words": 42.25,
+    "prompt_tokens": 97772,
+    "completion_tokens": 1683,
+    "failures": []
+  },
+  {
+    "setup": "mira_zero_shot",
+    "passed": 15,
+    "trials": 16,
+    "pass_rate": 0.9375,
+    "mean_seconds": 4.179067656250254,
+    "mean_calls": 2.3125,
+    "mean_answer_words": 50.6875,
+    "prompt_tokens": 91987,
+    "completion_tokens": 2034,
+    "failures": [
+      {
+        "trial": "mira_zero_shot__lead_continuity__1",
+        "checks": [
+          "no_failed_tools",
+          "no_premature_save"
+        ]
+      }
+    ]
+  },
+  {
+    "setup": "sami_default",
+    "passed": 16,
+    "trials": 16,
+    "pass_rate": 1.0,
+    "mean_seconds": 3.6884763250000105,
+    "mean_calls": 2.25,
+    "mean_answer_words": 38.125,
+    "prompt_tokens": 97702,
+    "completion_tokens": 1592,
+    "failures": []
+  }
+]

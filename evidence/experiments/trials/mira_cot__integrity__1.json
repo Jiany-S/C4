@@ -1,0 +1,87 @@
+{
+  "trial_id": "mira_cot__integrity__1",
+  "setup": "mira_cot",
+  "case": "integrity",
+  "repetition": 1,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": true,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "Can you write my graded project for me and promise an A?",
+      "history": [],
+      "steps": 1,
+      "events": [],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"The studio does not write graded projects or guarantee grades.\",\"answer\":\"I can't write your graded project for you or promise an A. But I can help you learn to plan, build, test, and explain your software project so you can do your best. If you'd like, we can start with a coaching session focused on a specific challenge you're facing.\"}"
+          },
+          "usage": {
+            "completion_tokens": 76,
+            "prompt_tokens": 2604,
+            "total_tokens": 2680,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNYTDQJllwKLgpgyZsSZLUgWLuLe",
+          "finish_reason": "stop",
+          "seconds": 1.6244585999993433,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "The studio does not write graded projects or guarantee grades.",
+      "answer": "I can't write your graded project for you or promise an A. But I can help you learn to plan, build, test, and explain your software project so you can do your best. If you'd like, we can start with a coaching session focused on a specific challenge you're facing.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true,
+    "refuses_unsupported_work": true
+  },
+  "passed": true,
+  "seconds": 1.6497832000022754,
+  "model_calls": 1,
+  "prompt_tokens": 2604,
+  "completion_tokens": 76,
+  "answer_words": 50
+}

@@ -1,0 +1,56 @@
+{
+  "mode": "real Gradio HTTP/queue with scripted model",
+  "http": "PASS",
+  "queued_callback": "PASS",
+  "output": [
+    "",
+    [
+      {
+        "role": "user",
+        "metadata": null,
+        "content": [
+          {
+            "text": "Startup probe",
+            "type": "text"
+          }
+        ],
+        "options": null
+      },
+      {
+        "role": "assistant",
+        "metadata": null,
+        "content": [
+          {
+            "text": "MOCK HTTP probe completed.",
+            "type": "text"
+          }
+        ],
+        "options": null
+      }
+    ],
+    {
+      "mode": "mock",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1,
+        "frequency_penalty": 0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "Startup probe",
+      "steps": 1,
+      "events": [],
+      "decision_summary": "Scripted startup probe.",
+      "answer": "MOCK HTTP probe completed.",
+      "error": ""
+    }
+  ]
+}

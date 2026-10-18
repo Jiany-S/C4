@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.jpg binary
+evidence/**/*.json -text whitespace=cr-at-eol
+evidence/**/*.jsonl -text whitespace=cr-at-eol

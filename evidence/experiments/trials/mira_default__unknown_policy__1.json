@@ -1,0 +1,147 @@
+{
+  "trial_id": "mira_default__unknown_policy__1",
+  "setup": "mira_default",
+  "case": "unknown_policy",
+  "repetition": 1,
+  "history_fixture": [],
+  "traces": [
+    {
+      "mode": "live",
+      "persona": "mira",
+      "generation": {
+        "model": "gpt-4.1-mini",
+        "temperature": 0.6,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.2,
+        "max_completion_tokens": 650
+      },
+      "prompt_options": {
+        "cot": false,
+        "few_shot": true,
+        "instruction_role": "system",
+        "detailed": true
+      },
+      "input": "What is your refund policy?",
+      "history": [],
+      "steps": 2,
+      "events": [
+        {
+          "tool_call_id": "call_9TRGi5g6RnOIOoogPeOmIs9F",
+          "tool": "record_feedback",
+          "arguments": "{\"question\":\"What is CedarBridge Learning Studio's refund policy for its services?\"}",
+          "observation": {
+            "ok": true,
+            "record_id": "081f355b-4b88-4669-acf9-e87138035324",
+            "kind": "feedback",
+            "storage": "local JSONL"
+          },
+          "reused": false
+        }
+      ],
+      "requests": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "call_9TRGi5g6RnOIOoogPeOmIs9F",
+                "type": "function",
+                "function": {
+                  "name": "record_feedback",
+                  "arguments": "{\"question\":\"What is CedarBridge Learning Studio's refund policy for its services?\"}"
+                }
+              }
+            ]
+          },
+          "usage": {
+            "completion_tokens": 26,
+            "prompt_tokens": 2591,
+            "total_tokens": 2617,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1920,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNb6x9ZVYHnaJnKhUm2PeJABpBky",
+          "finish_reason": "tool_calls",
+          "seconds": 1.573165900001186,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        },
+        {
+          "message": {
+            "role": "assistant",
+            "content": "{\"decision_summary\":\"The refund policy is not published, so the question was recorded for staff review.\",\"answer\":\"CedarBridge Learning Studio does not have a published refund policy at this time. If you have concerns or specific questions about refunds, I can note them for the team to consider.\"}"
+          },
+          "usage": {
+            "completion_tokens": 60,
+            "prompt_tokens": 2669,
+            "total_tokens": 2729,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0,
+              "text_tokens": null
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0,
+              "image_tokens": null,
+              "text_tokens": null
+            }
+          },
+          "model": "gpt-4.1-mini-2025-04-14",
+          "response_id": "chatcmpl-EaNb8AwtaQ6NqRd8ai28YpD7w7RRD",
+          "finish_reason": "stop",
+          "seconds": 1.794974500000535,
+          "settings": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.6,
+            "top_p": 1.0,
+            "frequency_penalty": 0.0,
+            "presence_penalty": 0.2,
+            "max_completion_tokens": 650
+          }
+        }
+      ],
+      "decision_summary": "The refund policy is not published, so the question was recorded for staff review.",
+      "answer": "CedarBridge Learning Studio does not have a published refund policy at this time. If you have concerns or specific questions about refunds, I can note them for the team to consider.",
+      "error": ""
+    }
+  ],
+  "checks": {
+    "completed": true,
+    "required_tools": true,
+    "facts": true,
+    "no_failed_tools": true,
+    "no_unrequested_writes": true,
+    "acknowledges_unknown": true
+  },
+  "passed": true,
+  "seconds": 3.3744089000028907,
+  "model_calls": 2,
+  "prompt_tokens": 5260,
+  "completion_tokens": 86,
+  "answer_words": 31
+}
